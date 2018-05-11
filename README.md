@@ -1,6 +1,7 @@
 [![Build Status](https://travis-ci.org/felipecolen/pyro-site.svg?branch=master)](https://travis-ci.org/felipecolen/pyro-site)
 [![pipeline status](https://gitlab.com/PyNorte-RO/pyro-site/badges/master/pipeline.svg)](https://gitlab.com/PyNorte-RO/pyro-site/commits/master)
 [![coverage report](https://gitlab.com/PyNorte-RO/pyro-site/badges/master/coverage.svg)](https://gitlab.com/PyNorte-RO/pyro-site/commits/master)
+[![Requirements Status](https://requires.io/github/felipecolen/pyro-site/requirements.svg?branch=master)](https://requires.io/github/felipecolen/pyro-site/requirements/?branch=master)
 
 # Site da PyRO
 Site da comunidade Python Rondônia desenvolvido em Python com o microframework Flask
