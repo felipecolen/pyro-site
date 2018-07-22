@@ -20,7 +20,7 @@ Site da comunidade Python Rondônia desenvolvido em Python com o microframework 
 
 ## Subindo o projeto
 
-        pip install -r requirements,txt
+        pip install -r requirements.txt
         python app.py
 
 
