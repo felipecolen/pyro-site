@@ -1,5 +1,5 @@
 import pytest
-from flask import url_for
+from flask import url_for, template_rendered
 
 from web import create_app
 
@@ -16,3 +16,8 @@ def test_app(client):
     texto = 'hello flask'
     assert texto
     assert 'fail' not in texto
+
+
+def test_index(client):
+    response = client.get(url_for('api.index_html'))
+    assert response.status_code == 200
