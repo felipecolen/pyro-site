@@ -6,15 +6,8 @@ from flask_sqlalchemy import SQLAlchemy
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 
-db = SQLAlchemy()
-
 from web import create_app
 app = create_app()
-
-db.init_app(app)
-app.app_context().push()
-db.create_all(app=create_app())
-migrate = Migrate(app, db)
 
 
 if __name__ == '__main__':

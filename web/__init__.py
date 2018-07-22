@@ -1,6 +1,6 @@
 from flask import Flask
 
-from .controllers import site
+from .controllers import api
 
 
 def create_app(debug=False):
@@ -8,6 +8,6 @@ def create_app(debug=False):
     app = Flask(__name__)
 
     app.debug = debug
-    app.register_blueprint(site)
+    app.register_blueprint(api)
 
     return app
