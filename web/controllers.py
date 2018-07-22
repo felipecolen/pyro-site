@@ -1,17 +1,16 @@
 from flask import Blueprint, render_template
 
-from web.models import Noticia
+# from web.models import Noticia
 
-site = Blueprint('site', __name__)
+api = Blueprint('api', __name__)
 
 
-@site.route("/teste")
+@api.route("/teste")
 def index():
     return "<h1>hello flask</h1>"
 
 
-@site.route("/", methods=['GET', 'POST'])
-@site.route('/home', methods=['GET', 'POST'])
+@api.route("/")
 def index_html():
 
     # form = PostForm()
@@ -33,10 +32,10 @@ def index_html():
     # prev_url = url_for('main.index', page=posts.prev_num) \
     #     if posts.has_prev else None
 
-    noticias = Noticia.query.order_by(Noticia.data_adicao.desc())
+    # noticias = Noticia.query.order_by(Noticia.data_adicao.desc())
 
     return render_template('index.html',
                            # title=_('Home'),
                            # form=form,
-                           noticias=noticias
+                           # noticias=noticias
                            )
