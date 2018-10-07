@@ -3,15 +3,15 @@ import os
 from flask import Flask, render_template
 
 basedir = os.path.abspath(os.path.dirname(__file__))
-app = Flask(__name__)
+app_site = Flask(__name__)
 
 
-@app.route("/teste")
+@app_site.route("/teste")
 def index():
     return "<h1>hello flask</h1>"
 
 
-@app.route("/")
+@app_site.route("/")
 def index_html():
 
     # form = PostForm()
@@ -42,27 +42,26 @@ def index_html():
                            )
 
 
-@app.route("/eventos")
+@app_site.route("/eventos")
 def eventos_html():
 
     return render_template('eventos.html', )
 
 
-@app.route("/posts")
+@app_site.route("/posts")
 def posts_html():
 
     return render_template('posts.html', )
 
 
-@app.route("/tutoriais")
+@app_site.route("/tutoriais")
 def tutoriais_html():
 
     return render_template('tutoriais.html', )
 
 
 if __name__ == '__main__':
-
-    app.config.update(
+    app_site.config.update(
         TESTING=True,
         SECRET_KEY=b'insira_uma_key_aqui',
         DEBUG=True,
@@ -71,4 +70,4 @@ if __name__ == '__main__':
         SQLALCHEMY_TRACK_MODIFICATIONS=False
     )
 
-    app.run(host='0.0.0.0', port=5000)
+    app_site.run(host='0.0.0.0', port=5000)
