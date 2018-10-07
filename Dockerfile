@@ -1,14 +1,18 @@
-FROM python:3.6.5-alpine3.7
+FROM python:3.6.6-alpine3.8
 MAINTAINER Felipe Colen <felipecolen@gmail.com>
 
-WORKDIR /usr/src/app
+ENV TZ="America/Porto_Velho"
+
+#RUN apk add --update --no-cache curl bash && apk del bash &&
+
+WORKDIR /app
+
+COPY requirements.txt .
+
+RUN pip install --no-cache-dir --upgrade pip setuptools && \
+    pip install --no-cache-dir -r requirements.txt
+
 COPY . .
-RUN rm -rf .git .idea .libs *.log
-
-RUN python3 -m ensurepip && \
-    pip install --upgrade pip setuptools
-
-RUN pip install --no-cache-dir -r requirements.txt
 
 RUN rm -r /root/.cache
 

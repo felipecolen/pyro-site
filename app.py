@@ -42,6 +42,24 @@ def index_html():
                            )
 
 
+@app.route("/eventos")
+def eventos_html():
+
+    return render_template('eventos.html', )
+
+
+@app.route("/posts")
+def posts_html():
+
+    return render_template('posts.html', )
+
+
+@app.route("/tutoriais")
+def tutoriais_html():
+
+    return render_template('tutoriais.html', )
+
+
 if __name__ == '__main__':
 
     app.config.update(
