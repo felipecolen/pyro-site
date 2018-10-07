@@ -19,7 +19,7 @@ def test_index(client):
 
 
 def test_eventos(client):
-    response = client.get(url_for('eventos_html'))
+    response = client.get(url_for('eventos.index_eventos_html'))
     deve_conter_na_pagina = 'Eventos'
 
     assert response.status_code == 200
