@@ -41,6 +41,7 @@ Caso não tenha, tente:
         chmod g+x /username && chmod g+x /username/test && chmod g+x /username/test/static
 
 Reinicie o Nginx
+
         nginx -s reload
         
         
