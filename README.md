@@ -29,3 +29,20 @@ Site da comunidade Python Rondônia desenvolvido em Python com o microframework 
         pip install docker-compose
         docker-compose up
 
+## Nginx
+Caso o Nginx não esteja servindo os arquivos estáticos corretamente, execute o comando abaixo para verificar se o user www-data tem permissão
+
+        sudo -u www-data stat /username/test/static
+        
+        
+Caso não tenha, tente:
+
+        gpasswd -a www-data username
+        chmod g+x /username && chmod g+x /username/test && chmod g+x /username/test/static
+
+Reinicie o Nginx
+
+        nginx -s reload
+        
+        
+Fonte: https://stackoverflow.com/questions/25774999/nginx-stat-failed-13-permission-denied
